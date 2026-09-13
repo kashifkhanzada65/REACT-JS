@@ -26,39 +26,58 @@ const App = () => {
     //     return <h1>Loading</h1>
     // }
 
-    const [isLoading, setIsLoading] = useState(true)
+    // const [isLoading, setIsLoading] = useState(true)
 
-    const foo = () => {
-        setTimeout(() => {
-            setIsLoading(false)
-        }, 3000)
-    }
-    foo()
+    // const foo = () => {
+    //     setTimeout(() => {
+    //         setIsLoading(false)
+    //     }, 3000)
+    // }
+    // foo()
 
     const [isAuth, setIsAuth] = useState(false)
+    const loginHandler = () => {
+        // if(isAuth){
+        //     setIsAuth(false)
+        // }else{
+        //     setIsAuth(true)
+        // }
 
+        // shortcut 
+        setIsAuth(!isAuth)
+    }
     return (
-        isLoading ? <h1>Loading</h1> :
-            < div >
-                <h1></h1>
-                <button >Login</button>
+        // isLoading ? <h1>Loading</h1> :
+        < div >
+            {/* <h1>{!isAuth ? "please login" : "Welcome Kashif"}</h1> */}
+
+            {isAuth ? (
+                <div>
+                    <h1>Hello Saylani</h1>
+                    <h1>Welcome Saylani</h1>
+                </div>
+            )
+                :
+                <h1>Please Login</h1>
+            }
+            <button onClick={loginHandler}>{isAuth ? "Logout" : "Login"}</button>
 
 
 
-                {/* <h1>Hello world</h1>
+            {/* <h1>Hello world</h1>
                 <h1>Hello world 1</h1>
                 <h1>Hello world 2</h1>
                 <h1>Hello world 3</h1> */}
 
-                {/* <button onClick={updateValue} >Updated Array</button> */}
+            {/* <button onClick={updateValue} >Updated Array</button> */}
 
-                {/* <h1>{!isRefresh?"First time render":"rerendering"}</h1>
+            {/* <h1>{!isRefresh?"First time render":"rerendering"}</h1>
             <button onClick={()=>{
                 setIsRefresh(true)
             }} >click</button> */}
-                {/* <Navber />
+            {/* <Navber />
             <Card /> */}
-            </div >
+        </div >
     )
 }
 
